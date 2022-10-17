@@ -8,6 +8,11 @@ type cat struct {
 type dog struct {
 }
 
+type Point struct {
+	x int
+	y int
+}
+
 func (c cat) speak() {
 	fmt.Println("喵喵喵")
 }
@@ -25,4 +30,13 @@ func main() {
 	var d dog
 	da(d)
 
+	var a interface{}
+	var point Point = Point{1, 2}
+	a = point
+
+	var b Point
+
+	b = a.(Point)
+
+	fmt.Println(b)
 }
